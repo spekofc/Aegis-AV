@@ -75,5 +75,5 @@ jobs:
             ~/.cargo/git/db
             target
           key: ${{ runner.os }}-cargo-${{ hashFiles('**/Cargo.lock') }}
-      - run: cargo check --workspace 2>&1 || echo "Expected: some Windows-specific crates fail on Linux"
-      - run: cargo test --workspace 2>&1 || echo "Expected: some Windows-specific crates fail on Linux"
+      - run: cargo check --workspace || true
+      - run: cargo test --workspace || true

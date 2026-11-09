@@ -1,0 +1,23 @@
+# aegis-engine - Main engine orchestration
+
+[package]
+name = "aegis-engine"
+version = "0.1.0"
+edition = "2021"
+description = "AEGIS AV - Engine orchestration"
+license = "Apache-2.0"
+
+[dependencies]
+aegis-core = { path = "../aegis-core" }
+aegis-config = { path = "../aegis-config" }
+aegis-scanner = { path = "../aegis-scanner" }
+aegis-signatures = { path = "../aegis-signatures" }
+aegis-realtime = { path = "../aegis-realtime" }
+aegis-antiexploit = { path = "../aegis-antiexploit" }
+aegis-quarantine = { path = "../aegis-quarantine" }
+aegis-updater = { path = "../aegis-updater" }
+aegis-ipc = { path = "../aegis-ipc" }
+aegis-telemetry = { path = "../aegis-telemetry" }
+tokio = { workspace = true }
+tracing = { workspace = true }
+anyhow = { workspace = true }

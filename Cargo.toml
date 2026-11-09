@@ -1,0 +1,123 @@
+[workspace]
+resolver = "2"
+members = [
+    "crates/aegis-core",
+    "crates/aegis-config",
+    "crates/aegis-signatures",
+    "crates/aegis-scanner",
+    "crates/aegis-realtime",
+    "crates/aegis-antiexploit",
+    "crates/aegis-quarantine",
+    "crates/aegis-updater",
+    "crates/aegis-ipc",
+    "crates/aegis-telemetry",
+    "crates/aegis-engine",
+    "crates/aegis-cli",
+    "crates/aegis-test-utils",
+]
+
+[workspace.dependencies]
+# Windows API
+windows = { version = "0.59", features = [
+    "Win32_Foundation",
+    "Win32_System_IO",
+    "Win32_Security",
+    "Win32_System_Kernel",
+    "Win32_System_Threading",
+    "Win32_Storage_FileSystem",
+    "Win32_Networking_WinSock",
+    "Win32_System_SystemServices",
+    "Win32_System_Memory",
+    "Win32_System_Diagnostics_Debug",
+    "Win32_System_RemoteDesktop",
+    "Win32_System_WindowsProgramming",
+] }
+
+# Async runtime
+tokio = { version = "1.38", features = ["full", "tracing", "rt-multi-thread", "macros"] }
+
+# Observability
+tracing = { version = "0.1", features = ["std", "log", "attributes"] }
+tracing-subscriber = { version = "0.3", features = ["env-filter", "fmt", "json"] }
+tracing-appender = "0.2"
+metrics = "0.22"
+metrics-exporter-prometheus = "0.13"
+
+# Serialization
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+serde_yaml = "0.9"
+bincode = { version = "1.3", features = ["serde"] }
+
+# Error handling
+thiserror = "1.0"
+anyhow = "1.0"
+
+# Cryptography
+ring = "0.17"
+sha2 = "0.10"
+hmac = "0.12"
+aes-gcm = { version = "0.10", features = ["aes"] }
+ed25519-dalek = "2.0"
+x25519-dalek = "2.0"
+rand = { version = "0.8", features = ["std", "small_rng"] }
+getrandom = { version = "0.2", features = ["std"] }
+zeroize = { version = "1.7", features = ["derive"] }
+subtle = "2.5"
+
+# Binary serialization
+bytemuck = "1.14"
+zerocopy = { version = "0.8", features = ["derive", "std"] }
+crc32c = "0.6"
+
+# Parsing
+goblin = "0.6"
+aho-corasick = "1.1"
+nom = "7.1"
+
+# Database
+sqlx = { version = "0.7", features = ["sqlite", "runtime-tokio", "chrono", "uuid", "migrate", "tls-rustls"] }
+
+# Utilities
+uuid = { version = "1.6", features = ["v7", "serde", "fast-rng"] }
+chrono = { version = "0.4", features = ["serde"] }
+bitflags = "2.5"
+parking_lot = "0.12"
+once_cell = "1.19"
+arc-swap = "1.6"
+smallvec = "1.13"
+bytes = "1.6"
+path-slash = "0.2"
+hex = "0.4"
+
+# CLI
+clap = { version = "4.5", features = ["derive", "env", "string", "wrap_help"] }
+console = "0.15"
+indicatif = "0.17"
+
+# Testing
+proptest = "1.4"
+tempfile = "3.8"
+pretty_assertions = "1.4"
+wiremock = "0.5"
+
+[workspace.lints]
+unsafe_code = { level = "deny" }
+unused_crate_dependencies = { level = "warn" }
+clippy.unwrap_used = { level = "warn" }
+clippy.expect_used = { level = "warn" }
+clippy.panic = { level = "warn" }
+clippy.todo = { level = "warn" }
+clippy.unimplemented = { level = "warn" }
+
+[profile.release]
+lto = "fat"
+codegen-units = 1
+panic = "abort"
+strip = "symbols"
+opt-level = 3
+debug = false
+
+[profile.test]
+debug = true
+debug-assertions = true

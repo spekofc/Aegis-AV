@@ -1,0 +1,23 @@
+# aegis-updater - Update engine
+
+[package]
+name = "aegis-updater"
+version = "0.1.0"
+edition = "2021"
+description = "AEGIS AV - Update engine"
+license = "Apache-2.0"
+
+[dependencies]
+aegis-core = { path = "../aegis-core" }
+aegis-config = { path = "../aegis-config" }
+aegis-signatures = { path = "../aegis-signatures" }
+aegis-ipc = { path = "../aegis-ipc" }
+reqwest = { version = "0.12", features = ["json", "rustls-tls", "gzip"] }
+ed25519-dalek = { workspace = true }
+tokio = { workspace = true }
+tracing = { workspace = true }
+anyhow = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
+futures-util = "0.3"
+sha2 = { workspace = true }

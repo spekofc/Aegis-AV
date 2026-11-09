@@ -1,0 +1,39 @@
+# aegis-scanner - File, memory, and process scanning
+
+[package]
+name = "aegis-scanner"
+version = "0.1.0"
+edition = "2021"
+description = "AEGIS AV - Scanner"
+license = "Apache-2.0"
+
+[dependencies]
+aegis-core = { path = "../aegis-core" }
+aegis-signatures = { path = "../aegis-signatures" }
+aegis-config = { path = "../aegis-config" }
+aegis-telemetry = { path = "../aegis-telemetry" }
+goblin = { workspace = true }
+sha2 = { workspace = true }
+ring = { workspace = true }
+aho-corasick = { workspace = true }
+tokio = { workspace = true }
+async-trait = "0.1"
+tracing = { workspace = true }
+anyhow = { workspace = true }
+parking_lot = { workspace = true }
+arc-swap = { workspace = true }
+uuid = { workspace = true }
+chrono = { workspace = true }
+hex = "0.4"
+base64 = "0.21"
+walkdir = "2.5"
+ignore = "0.4"
+serde = { workspace = true }
+serde_json = { workspace = true }
+zip = "0.6"
+tar = "0.4"
+flate2 = "1.0"
+
+[dev-dependencies]
+tempfile = "3.10"
+rand = "0.8"

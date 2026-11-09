@@ -1,0 +1,38 @@
+# aegis-signatures - Signature database and matching
+
+[package]
+name = "aegis-signatures"
+version = "0.1.0"
+edition = "2021"
+description = "AEGIS AV - Signature database"
+license = "Apache-2.0"
+
+[dependencies]
+aegis-core = { path = "../aegis-core" }
+aegis-config = { path = "../aegis-config" }
+sqlx = { workspace = true }
+reqwest = { version = "0.12", features = ["json", "rustls-tls"] }
+aho-corasick = "1.1"
+getrandom = { workspace = true }
+ring = { workspace = true }
+sha2 = { workspace = true }
+hkdf = "0.12"
+aes-gcm = { workspace = true }
+bytemuck = { workspace = true }
+crc32c = { workspace = true }
+tokio = { workspace = true }
+anyhow = { workspace = true }
+tracing = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
+uuid = { workspace = true }
+chrono = { workspace = true }
+parking_lot = { workspace = true }
+arc-swap = { workspace = true }
+base64 = "0.21"
+hex = "0.4"
+ed25519-dalek = { workspace = true }
+
+[dev-dependencies]
+tempfile = "3.10"
+rand = "0.8"

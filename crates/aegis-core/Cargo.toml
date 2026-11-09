@@ -1,0 +1,26 @@
+# aegis-core - Core types, error hierarchy, and shared traits
+
+[package]
+name = "aegis-core"
+version = "0.1.0"
+edition = "2021"
+description = "AEGIS AV - Core types and traits"
+license = "Apache-2.0"
+repository = "https://github.com/spekofc/AEGIS-AV"
+
+[dependencies]
+thiserror = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
+bytes = { workspace = true }
+bitflags = { workspace = true }
+uuid = { workspace = true }
+chrono = { workspace = true }
+once_cell = { workspace = true }
+parking_lot = { workspace = true }
+anyhow = { workspace = true }
+async-trait = "0.1"
+tokio = { workspace = true }
+sqlx = { workspace = true }
+hex = "0.4"
+notify = "6.1"

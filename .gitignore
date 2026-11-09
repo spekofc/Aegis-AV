@@ -1,0 +1,43 @@
+# Rust target directory
+/target/
+
+# Local data directory (databases, quarantine, test files)
+/data/
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Log files
+*.log
+
+# Temporary files
+*.tmp
+*.temp
+
+# Backup files
+*.bak
+*.backup
+
+# Cargo (keep Cargo.lock for reproducible builds)
+
+# Compiled binaries (except in release artifacts)
+*.exe
+*.dll
+*.so
+*.dylib
+
+# Test artifacts
+*.test
+
+# Coverage
+coverage/
+*.profraw
+*.profdata

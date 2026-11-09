@@ -1,0 +1,25 @@
+# aegis-test-utils - Test utilities
+
+[package]
+name = "aegis-test-utils"
+version = "0.1.0"
+edition = "2021"
+description = "AEGIS AV - Test utilities"
+license = "Apache-2.0"
+
+[dependencies]
+aegis-core = { path = "../aegis-core" }
+aegis-config = { path = "../aegis-config" }
+aegis-signatures = { path = "../aegis-signatures" }
+aegis-scanner = { path = "../aegis-scanner" }
+tempfile = { workspace = true }
+proptest = { workspace = true }
+pretty_assertions = { workspace = true }
+tokio = { workspace = true }
+tracing = { workspace = true }
+anyhow = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
+fastrand = "2.0"
+uuid = { workspace = true }
+sha2 = { workspace = true }

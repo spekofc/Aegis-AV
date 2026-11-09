@@ -1,0 +1,17 @@
+# aegis-ipc - Inter-process communication
+
+[package]
+name = "aegis-ipc"
+version = "0.1.0"
+edition = "2021"
+description = "AEGIS AV - Inter-process communication"
+license = "Apache-2.0"
+
+[dependencies]
+aegis-core = { path = "../aegis-core" }
+aegis-config = { path = "../aegis-config" }
+windows = { workspace = true }
+tokio = { workspace = true }
+tracing = { workspace = true }
+anyhow = { workspace = true }
+bytemuck = { workspace = true }

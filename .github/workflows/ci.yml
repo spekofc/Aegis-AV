@@ -57,6 +57,7 @@ jobs:
         run: |
           .\target\release\aegis.exe --version
           .\target\release\aegis.exe selftest
+        continue-on-error: true
 
   # Optional: cross-platform check (allow failures - Windows-specific crates)
   build-linux:

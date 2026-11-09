@@ -1,0 +1,51 @@
+---
+name: Bug Report
+description: Report a bug in AEGIS AV
+title: "[BUG] "
+labels: ["bug"]
+assignees: []
+---
+
+## Description
+
+A clear and concise description of the bug.
+
+## Steps to Reproduce
+
+1.
+2.
+3.
+
+## Expected Behavior
+
+What you expected to happen.
+
+## Actual Behavior
+
+What actually happened.
+
+## Environment
+
+| Property | Value |
+|----------|-------|
+| OS | Windows 10/11 x64 |
+| Rust version | `rustc --version` |
+| AEGIS AV version | `aegis.exe --version` |
+| Build type | Debug / Release |
+
+## Reproduction
+
+```bash
+# Commands to reproduce
+aegis scan ...
+```
+
+## Additional Context
+
+Logs, screenshots, or sample files (if safe to share).
+
+## Checklist
+
+- [ ] I have searched existing issues
+- [ ] I have tested on latest `main`
+- [ ] I have provided reproduction steps
